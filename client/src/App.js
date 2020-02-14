@@ -1,13 +1,12 @@
 import React from "react";
-import Books from "./pages/Books";
-import Detail from "./pages/Detail";
-import NoMatch from "./pages/NoMatch";
+import Search from "./pages/Search";
+import Saved from "./pages/Saved";
 import Nav from "./components/Nav";
+import Jumbotron from './components/Jumbotron';
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
 
 function App() {
@@ -16,10 +15,10 @@ function App() {
       <div>
         <Nav />
         <Switch>
-          <Route exact path="/" component={Books} />
-          <Route exact path="/books" component={Books} />
-          <Route exact path="/books/:id" component={Detail} />
-          <Route component={NoMatch} />
+          <Route exact path="/" component={Search} />
+          <Route exact path="/saved" component={Saved} />
+          {/* <Route exact path="/books/:id" component={Detail} /> */}
+          {/* <Route component={NoMatch} /> */}
         </Switch>
 
       </div>
