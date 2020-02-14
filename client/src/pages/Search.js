@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Jumbotron from '../components/Jumbotron';
+import SearchBar from '../components/SearchBar';
+import ResultsContainer from '../components/ResultsContainer';
 
 
 class Search extends Component {
@@ -10,11 +12,14 @@ class Search extends Component {
 
     render() {
         return (
-            <div className="container">
+            <div>
                 <Jumbotron>
                     <h1 className="mt-0">Google Books Search</h1>
                     <h2>Search for Books of Interest</h2>
                 </Jumbotron>
+                <SearchBar />
+                <ResultsContainer />
+
             </div>
         )
     }
