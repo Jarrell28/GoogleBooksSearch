@@ -36,8 +36,9 @@ class Search extends Component {
             this.setState({ term: "", books: results.data.items });
             console.log(results);
         });
-
     }
+
+
 
 
     render() {
