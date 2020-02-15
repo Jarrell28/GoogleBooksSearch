@@ -18,8 +18,6 @@ function App() {
           <Switch>
             <Route exact path="/" component={Search} />
             <Route exact path="/saved" component={Saved} />
-            {/* <Route exact path="/books/:id" component={Detail} /> */}
-            {/* <Route component={NoMatch} /> */}
           </Switch>
         </div>
       </div>

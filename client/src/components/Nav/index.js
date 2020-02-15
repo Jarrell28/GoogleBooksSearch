@@ -8,12 +8,12 @@ function Nav() {
         Google Books
       </Link>
 
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <Link class="nav-link" to="/">Search</Link>
+      <ul className="navbar-nav mr-auto">
+        <li className="nav-item">
+          <Link className="nav-link" to="/">Search</Link>
         </li>
-        <li class="nav-item">
-          <Link class="nav-link" to="/saved">Saved</Link>
+        <li className="nav-item">
+          <Link className="nav-link" to="/saved">Saved</Link>
         </li>
       </ul>
     </nav>
