@@ -3,6 +3,8 @@ import Jumbotron from '../components/Jumbotron';
 import SearchBar from '../components/SearchBar';
 import ResultsContainer from '../components/ResultsContainer';
 
+const url = "https://www.googleapis.com/books/v1/volumes?q=";
+const apiKey = "AIzaSyAaTN_4PoN3jSzEWC9NgrtGleEE-hbVSFM";
 
 class Search extends Component {
     constructor(props) {
