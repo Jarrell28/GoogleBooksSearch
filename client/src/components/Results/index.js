@@ -16,7 +16,7 @@ class Results extends React.Component {
         this.link = props.book.volumeInfo.infoLink;
     }
 
-    saveBook = (event) => {
+    saveBook = () => {
         const book = {
             title: this.title,
             authors: this.authors,

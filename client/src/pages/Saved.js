@@ -1,13 +1,22 @@
 import React, { Component } from 'react';
 import Jumbotron from '../components/Jumbotron';
-import SearchBar from '../components/SearchBar';
-import ResultsContainer from '../components/ResultsContainer';
+import SavedContainer from '../components/SavedContainer';
+import axios from 'axios';
 
 
 class Saved extends Component {
     constructor(props) {
         super(props)
-        this.state = {}
+        this.state = {
+            books: []
+        }
+    }
+
+    componentDidMount() {
+        axios.get("/api/books").then(books => {
+            console.log(books.data);
+            this.setState({ books: books.data })
+        });
     }
 
     render() {
@@ -17,7 +26,7 @@ class Saved extends Component {
                     <h1 className="mt-0">Google Books Search</h1>
                     <h2>Your Saved Books</h2>
                 </Jumbotron>
-                <ResultsContainer />
+                <SavedContainer books={this.state.books} />
 
             </div>
         )

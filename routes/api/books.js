@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const db = require("../../models");
+const mongoose = require("mongoose");
 
 router.post("/", function (req, res) {
   db.Book.create(req.body.book).then(book => {
@@ -7,16 +8,18 @@ router.post("/", function (req, res) {
   })
 })
 
-// Matches with "/api/books"
-// router.route("/")
-//   .get(booksController.findAll)
-//   .post(booksController.create);
+router.get("/", function (req, res) {
+  db.Book.find().then(book => {
+    res.json(book);
+  })
+})
 
-// // Matches with "/api/books/:id"
-// router
-//   .route("/:id")
-//   .get(booksController.findById)
-//   .put(booksController.update)
-//   .delete(booksController.remove);
+router.delete("/:id", function (req, res) {
+  const id = req.params.id;
+  db.Book.deleteOne({ _id: mongoose.Types.ObjectId(id) }).then(book => {
+    res.json("success")
+  });
+})
+
 
 module.exports = router;
